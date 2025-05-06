@@ -1,53 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Div com Título Fixo</title>
-  <style>
-    .conteudo {
-      position: relative;
-      width: 600px;
-      height: 400px;
-      margin: 50px auto;
-      border: 1px solid #ccc;
-      overflow-y: auto;
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .titulo {
-      position: sticky;
-      top: 0;
-      background-color: #007BFF;
-      color: white;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      z-index: 1;
-    }
-
-    .texto {
-      padding: 20px;
-      font-size: 16px;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="conteudo">
-    <div class="titulo">Título Fixo</div>
-    <div class="texto">
-      <!-- Conteúdo de exemplo para rolagem -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p>Morbi rhoncus ante non pulvinar suscipit.</p>
-      <p>Vivamus fermentum nibh in magna tincidunt, id luctus arcu fermentum.</p>
-      <p>Integer dapibus nisi vitae velit iaculis, et finibus nisi volutpat.</p>
-      <p>Fusce vehicula nisl at risus sodales bibendum.</p>
-      <p>Donec a felis nec tortor consequat pretium.</p>
-
-    </div>
+<main>
+  <app-sidebar></app-sidebar>
+  <div class="title">
+    <h1>Dashboard FORD</h1>
   </div>
 
-</body>
-</html>
+  <div>
+      <app-card
+          title="Veículo"
+          content="fix it"
+          class="dash-card"
+      ></app-card>
+
+      <app-card
+          title="Veículo"
+          content="fix it"
+          class="dash-card"
+      ></app-card>
+
+      <app-card
+          title="Veículo"
+          content="fix it"
+          class="dash-card"
+      ></app-card>
+
+      <app-card
+          title="Veículo"
+          content="fix it"
+          class="dash-card"
+      ></app-card>      
+  </div>
+</main>

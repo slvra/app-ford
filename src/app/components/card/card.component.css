@@ -1,0 +1,31 @@
+
+.window {
+    position: relative;
+    width: 680px;
+    height: 550px;
+    margin: 50px auto;
+    border: 1px solid rgb(157, 155, 155, 0.8);
+    border-radius: 5px;
+    overflow-y: auto;
+    background-color: rgba(241, 243, 246, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .window-title {
+    position: sticky;
+    top: 0;
+    background-color: rgba(241, 243, 246, 0.8);
+    border-bottom: 1px solid rgb(157, 155, 155, 0.8);
+    color: rgb(96, 93, 93);
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  .window-content {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0073ff;
+  }
