@@ -1,4 +1,4 @@
-main {
+section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -14,16 +14,9 @@ main {
     width: 50vw;
     height: 50vh;
     background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
     border: 2px solid #959393;
-    
-
-
-    /* background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: justify;
-    max-width: 800px; */
-
   }
 
   .window-content{
