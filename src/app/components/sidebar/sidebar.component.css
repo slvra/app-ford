@@ -3,8 +3,10 @@
     top: 20px;
     left: 20px;
     z-index: 1001;
-    background-color: #333;
-    color: white;
+    background-color: #fffdfd;
+    color: rgb(85, 193, 79);
+    font-weight: 800;
+    font-size: 1.6rem;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -17,7 +19,7 @@
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: #444;
+    background-color: #ffffff;
     color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.5);

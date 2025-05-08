@@ -1,16 +1,25 @@
-.title{
-    width: 100vw;
-    margin: auto;
-    color: #0073ff;
+.title {
+  width: 100%;
+  text-align: center;
+  color: #0073ff;
+  margin: 30px 0;
 }
 
-div {
-    display: flex;
-    justify-content: space-between;
-  }
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espaço entre os cards */
+  padding: 0 2vw;
+  border: #0073ff  solid 1px;
+}
 
-  .dash-card {
-    width: 10vw;
-    height: 10vh;
-    gap: 10px;
-  }
+.dash-card {
+  width: 50px;
+  height: 40px;
+  background-color: #c42020;
+  border-radius: 4px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 10px; /* opcional: texto menor para caber no card */
+}
+

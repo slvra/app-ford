@@ -1,1 +1,36 @@
-<p>login works!</p>
+<main>
+    <section class="main-section" >
+        <img class="overlay" src="img/Mustang-red.png" />
+    </section>
+
+    <section class="form-section">
+        <div class="overlay-wrapper" style="backdrop-filter: blur(12px);">
+            <img src="img/ford.png" />
+            <h2>Boas-vindas</h2>
+            <ng-content></ng-content>
+            <div class="btn-wrapper">
+                <!-- <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn" >{{ primaryBtnText }}</button> -->
+              
+                <!-- <button class="btn-secondary" (click)="navigate()" >{{ secondaryBtnText }}</button> -->
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<!-- <div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="username">Usuário</label>
+      <input id="username" formControlName="username" type="text" />
+      
+      <label for="password">Senha</label>
+      <input id="password" formControlName="password" type="password" />
+      
+      <button type="submit">Entrar</button>
+      
+      <p *ngIf="loginError" class="error">{{ loginError }}</p>
+    </form>
+  </div>
+   -->

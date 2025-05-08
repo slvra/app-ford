@@ -4,8 +4,6 @@
   <div class="sidebar-logo" *ngIf="logo">
     <img [src]="logo"  />
   </div>
-
-    <h2>Menu</h2>
     <ul>
       <li *ngFor="let link of links">
         <a [routerLink]="link.route" (click)="toggleSidebar()">{{ link.label }}</a>

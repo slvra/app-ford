@@ -1,32 +1,42 @@
 <main>
-  <app-sidebar></app-sidebar>
-  <div class="title">
-    <h1>Dashboard FORD</h1>
-  </div>
-
-  <div>
+    <app-sidebar
+      [logo]="'img/ford.png'"
+      [links]="[
+        { label: 'Home', route: '/home' },
+        { label: 'Dashboard', route: '/dashboard' }
+      ]"
+    ></app-sidebar>
+  
+    <div class="title">
+      <h1>Dashboard FORD</h1>
+    </div>
+  
+    <div class="card-container" >
       <app-card
-          title="Veículo"
-          content="fix it"
-          class="dash-card"
+        title="Veículo"
+        content="fix it"
+        class="dash-card"
+        style="width: 10vw; height: 10px;"
       ></app-card>
-
-      <app-card
-          title="Veículo"
-          content="fix it"
-          class="dash-card"
+  
+      <!-- <app-card
+        title="Total de Vendas"
+        content="fix it"
+        class="dash-card"
       ></app-card>
-
+  
       <app-card
-          title="Veículo"
-          content="fix it"
-          class="dash-card"
+        title="Conecatados"
+        content="fix it"
+        class="dash-card"
       ></app-card>
-
+  
       <app-card
-          title="Veículo"
-          content="fix it"
-          class="dash-card"
-      ></app-card>      
-  </div>
-</main>
+        title="Update Software"
+        content="fix it"
+        class="dash-card"
+      ></app-card> -->
+    </div>
+
+  </main>
+  

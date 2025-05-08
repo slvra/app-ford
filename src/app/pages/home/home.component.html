@@ -9,7 +9,12 @@
             class="home-card"
         ></app-card>
 
-        <app-sidebar></app-sidebar>
+        <app-sidebar
+            [logo]="'img/ford.png'"
+            [links]="[
+                { label: 'Home', route: '/home' },
+                { label: 'Dashboard', route: '/dashboard' }]"    
+        ></app-sidebar>
     </section>
 </main>
 
