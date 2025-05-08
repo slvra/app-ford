@@ -6,7 +6,7 @@
     background-color: #fffdfd;
     color: rgb(85, 193, 79);
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -49,10 +49,10 @@
   .sidebar-logo {
     text-align: center;
     margin-bottom: 20px;
+
+    img{
+      max-width: 150px;
+      height: auto;
+      margin: 20px 0;
+    }
   }
-  
-  .sidebar-logo img {
-    max-width: 150px;
-    height: auto;
-  }
-  

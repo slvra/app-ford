@@ -1,6 +1,6 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 interface SidebarLink {
   label: string;
