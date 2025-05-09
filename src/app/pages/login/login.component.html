@@ -16,24 +16,21 @@
             <h2>Boas-vindas</h2>
             <ng-content></ng-content>
             <div class="btn-wrapper">
-                <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn" >{{ primaryBtnText }}</button>
-              
-                <button class="btn-secondary" (click)="navigate()" >{{ secondaryBtnText }}</button>
+                <button class="btn-input" (click)="submits()" [disabled]="disableBtn" >{{ BtnText }}</button>        
             </div>
         </div>
     </section>
 </main>
 
-<form [formGroup]="loginForm">
+<!-- <form [formGroup]="loginForm">
     <app-input
         formControlName="email"
         inputName="email"
         type="email"
         placeholder="Insira seu e-mail"
     >
-        <img src="/assets/svg/user.svg" alt="Ícone de Email" leftIcon>
-        <img src="/assets/svg/check-circle.svg" alt="Ícone de Validação" rightIcon>
-    </app-input>
+        <img src="/assets/svg/user.svg" alt="Ícone de Email" icon>
+    </app-input> -->
 
 <!-- <div class="login-container">
     <h2>Login</h2>

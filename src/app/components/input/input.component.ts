@@ -1,17 +1,25 @@
-import { Component, Input } from '@angular/core';
-import { ReactiveFormsModule, ControlValueAccessor } from '@angular/forms';
+import { Component, Input, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, ControlValueAccessor, FormControl } from '@angular/forms';
+import { LoginComponent } from '../../pages/login/login.component';
 
 type InputTypes = "text" | "email" | "password"
+
+interface LoginForm {
+  email: FormControl,
+  password: FormControl
+}
 
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  declarations: [LoginComponent],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css'
 })
-export class LoginComponent implements ControlValueAccessor{
+export class InputComponent implements ControlValueAccessor{
   @Input() type: InputTypes = "text";
   @Input() placeholder: string = "";
   @Input() label: string = "";
