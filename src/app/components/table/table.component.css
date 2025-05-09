@@ -1,9 +1,9 @@
-table {
+/* table {
     position: fixed;
     bottom: 0;
-}
+} */
 
-/* table {
+table {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -28,4 +28,4 @@ table {
         }
     }
 
-} */
+}

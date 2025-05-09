@@ -15,31 +15,7 @@
     <div class="overlay-wrapper">
       <img src="img/ford.png" />
       <h2>Boas-vindas</h2>
-      <form [formGroup]="loginForm" (ngSubmit)="submits()">
-        <app-input
-          formControlName="nome"
-          inputName="nome"
-          type="text"
-          placeholder="Insira seu nome de usuário"
-        >
-          <img src="/assets/svg/user.svg" alt="Ícone de Usuário" />
-        </app-input>
-
-        <app-input
-          formControlName="senha"
-          inputName="senha"
-          type="password"
-          placeholder="Insira sua senha"
-        >
-          <img src="/assets/svg/lock.svg" alt="Ícone de Senha" />
-        </app-input>
-
-        <div class="btn-wrapper">
-          <button class="btn-input" type="submit" [disabled]="disableBtn">
-            {{ BtnText }}
-          </button>
-        </div>
-      </form>
+      <app-input></app-input>
     </div>
   </section>
 </main>
