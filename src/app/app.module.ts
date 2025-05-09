@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     DashboardComponent
   ],
-  // Removed bootstrap array as AppComponent is standalone
 })
 export class AppModule {
 

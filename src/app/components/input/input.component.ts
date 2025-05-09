@@ -1,36 +1,35 @@
-import { Component, Input, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, ControlValueAccessor, FormControl } from '@angular/forms';
-import { LoginComponent } from '../../pages/login/login.component';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup } from '@angular/forms';
 
-type InputTypes = "text" | "email" | "password"
-
-interface LoginForm {
-  email: FormControl,
-  password: FormControl
-}
-
+type InputTypes = "text" | "email" | "password";
 
 @Component({
   selector: 'app-input',
-  standalone: true,
-  declarations: [LoginComponent],
-  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  styleUrl: './input.component.css',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true
+    }
+  ],
+  standalone: true,
+  imports: []
 })
-export class InputComponent implements ControlValueAccessor{
+export class InputComponent implements ControlValueAccessor {
   @Input() type: InputTypes = "text";
   @Input() placeholder: string = "";
   @Input() label: string = "";
   @Input() inputName: string = "";
 
   value: string = "";
-  onChange: any = () => {}
-  onTouched: any = () => {}
+  onChange = (_: any) => {};
+  onTouched = () => {};
 
-  onInput(event: Event){
+  onInput(event: Event) {
     const value = (event.target as HTMLInputElement).value;
+    this.value = value;
     this.onChange(value);
   }
 
@@ -46,7 +45,7 @@ export class InputComponent implements ControlValueAccessor{
     this.onTouched = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
+  setDisabledState?(isDisabled: boolean): void {
     
   }
 }

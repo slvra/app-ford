@@ -1,36 +1,50 @@
 <main>
-    <section class="main-section" >
-        <img class="overlay" src="img/Mustang-red.png" />
-        <app-sidebar
-        [logo]="'img/ford.png'"
-        [links]="[
-            { label: 'Login', route: '/login' },
-            { label: 'Home', route: '/home' },
-            { label: 'Dashboard', route: '/dashboard' }]"    
+  <section class="main-section">
+    <img class="overlay" src="img/Mustang-red.png" />
+    <app-sidebar
+      [logo]="'img/ford.png'"
+      [links]="[
+        { label: 'Login', route: '/login' },
+        { label: 'Home', route: '/home' },
+        { label: 'Dashboard', route: '/dashboard' }
+      ]"
     ></app-sidebar>
-    </section>
+  </section>
 
-    <section class="form-section">
-        <div class="overlay-wrapper">
-            <img src="img/ford.png" />
-            <h2>Boas-vindas</h2>
-            <ng-content></ng-content>
-            <div class="btn-wrapper">
-                <button class="btn-input" (click)="submits()" [disabled]="disableBtn" >{{ BtnText }}</button>        
-            </div>
+  <section class="form-section">
+    <div class="overlay-wrapper">
+      <img src="img/ford.png" />
+      <h2>Boas-vindas</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="submits()">
+        <app-input
+          formControlName="nome"
+          inputName="nome"
+          type="text"
+          placeholder="Insira seu nome de usuário"
+        >
+          <img src="/assets/svg/user.svg" alt="Ícone de Usuário" />
+        </app-input>
+
+        <app-input
+          formControlName="senha"
+          inputName="senha"
+          type="password"
+          placeholder="Insira sua senha"
+        >
+          <img src="/assets/svg/lock.svg" alt="Ícone de Senha" />
+        </app-input>
+
+        <div class="btn-wrapper">
+          <button class="btn-input" type="submit" [disabled]="disableBtn">
+            {{ BtnText }}
+          </button>
         </div>
-    </section>
+      </form>
+    </div>
+  </section>
 </main>
 
-<!-- <form [formGroup]="loginForm">
-    <app-input
-        formControlName="email"
-        inputName="email"
-        type="email"
-        placeholder="Insira seu e-mail"
-    >
-        <img src="/assets/svg/user.svg" alt="Ícone de Email" icon>
-    </app-input> -->
+
 
 <!-- <div class="login-container">
     <h2>Login</h2>
