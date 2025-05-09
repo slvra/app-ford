@@ -1,23 +1,39 @@
 <main>
     <section class="main-section" >
         <img class="overlay" src="img/Mustang-red.png" />
+        <app-sidebar
+        [logo]="'img/ford.png'"
+        [links]="[
+            { label: 'Login', route: '/login' },
+            { label: 'Home', route: '/home' },
+            { label: 'Dashboard', route: '/dashboard' }]"    
+    ></app-sidebar>
     </section>
 
     <section class="form-section">
-        <div class="overlay-wrapper" style="backdrop-filter: blur(12px);">
+        <div class="overlay-wrapper">
             <img src="img/ford.png" />
             <h2>Boas-vindas</h2>
             <ng-content></ng-content>
             <div class="btn-wrapper">
-                <!-- <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn" >{{ primaryBtnText }}</button> -->
+                <button class="btn-primary" (click)="submit()" [disabled]="disablePrimaryBtn" >{{ primaryBtnText }}</button>
               
-                <!-- <button class="btn-secondary" (click)="navigate()" >{{ secondaryBtnText }}</button> -->
+                <button class="btn-secondary" (click)="navigate()" >{{ secondaryBtnText }}</button>
             </div>
         </div>
     </section>
 </main>
 
-
+<form [formGroup]="loginForm">
+    <app-input
+        formControlName="email"
+        inputName="email"
+        type="email"
+        placeholder="Insira seu e-mail"
+    >
+        <img src="/assets/svg/user.svg" alt="Ícone de Email" leftIcon>
+        <img src="/assets/svg/check-circle.svg" alt="Ícone de Validação" rightIcon>
+    </app-input>
 
 <!-- <div class="login-container">
     <h2>Login</h2>

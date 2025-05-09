@@ -1,7 +1,9 @@
 <main>
+  <section>
     <app-sidebar
       [logo]="'img/ford.png'"
       [links]="[
+        { label: 'Login', route: '/login' },
         { label: 'Home', route: '/home' },
         { label: 'Dashboard', route: '/dashboard' }
       ]"
@@ -10,6 +12,7 @@
     <div class="title">
       <h1>Dashboard FORD</h1>
     </div>
+  </section>
   
     <div class="card-container" >
       <app-card
@@ -18,10 +21,10 @@
         class="dash-card"
       >
       <select name="cars" id="cars" style="width: 100%;">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+        <option value="1">Ranger</option>
+        <option value="2">Mustang</option>
+        <option value="3">Territory</option>
+        <option value="4">Bronco Sport</option>
       </select>
       </app-card>
   
@@ -45,7 +48,7 @@
     </div>
 
     <div class="car-img">
-      
+      <img src="http://localhost:3001/img/ranger.png" />
     </div>
 
     <div class="table">

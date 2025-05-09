@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
+  imports: [SidebarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  loginError: string = 'User ou senha inválidos';
+  loginError: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -27,7 +29,7 @@ export class LoginComponent {
   onSubmit(): void {
     const { username, password } = this.loginForm.value;
     if (this.authService.login(username, password)) {
-      this.router.navigate(['/home']); // redireciona para página protegida
+      this.router.navigate(['/home']);
     } else {
       this.loginError = 'Usuário ou senha inválidos.';
     }

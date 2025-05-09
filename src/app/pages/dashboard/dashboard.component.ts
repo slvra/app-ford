@@ -15,9 +15,7 @@ import { TableComponent } from '../../components/table/table.component';
 })
 export class DashboardComponent {
 
-  // vehicleList = new FormGroup({
-  
-  // })
+
   vehicleList = new FormGroup({
     totalVendas    : new FormControl(''),
     conectados     : new FormControl(null),
