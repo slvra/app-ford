@@ -31,6 +31,10 @@ export class DashboardComponent implements OnInit {
       this.selectedVehicle = this.vehicles.find(v => v.id == id);
     });
   }
+
+    get selectedIdControl(): FormControl {
+    return this.vehicleList.get('selectedId') as FormControl;
+  }
 }
 
 

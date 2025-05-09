@@ -20,7 +20,7 @@
         [content]="selectedVehicle?.vehicle || 'Selecione um modelo'"
         class="dash-card"
             >
-      <select [formControl]="vehicleList.get('selectedId')" style="width: 100%;">
+      <select [formControl]="selectedIdControl" style="width: 100%;">
         <option *ngFor="let car of vehicles" [value]="car.id">{{car.vehicle}}</option>
       </select>
       </app-card>
