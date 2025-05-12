@@ -5,11 +5,12 @@ import { CardComponent } from '../../components/card/card.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { TableComponent } from '../../components/table/table.component';
 import { CommonModule } from '@angular/common';
+import { LogoutBtnComponent } from '../../components/logout-btn/logout-btn.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CardComponent, ReactiveFormsModule, SidebarComponent, TableComponent, CommonModule],
+  imports: [CardComponent, ReactiveFormsModule, SidebarComponent, TableComponent, CommonModule, LogoutBtnComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
