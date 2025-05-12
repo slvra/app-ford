@@ -15,7 +15,7 @@
     </div>
   </section>
   
-    <div class="card-container" >
+    <div class="card-container w-100" >
       <app-card
         title="Veículo"
         [content]="selectedVehicle?.vehicle || 'Selecione um modelo'"
@@ -33,9 +33,9 @@
         
       <app-card
         title="Total de Vendas"
-        [content]="selectedVehicle?.ano || '—'"
+        [content]="selectedVehicle?.volumetotal || '—'"
         class="dash-card"
-      >{{ selectedVehicle?.connected }}</app-card>
+      >{{ selectedVehicle?.volumetotal }}</app-card>
         
       <app-card
         title="Conectados"
@@ -47,7 +47,7 @@
         title="Update Software"
         [content]="selectedVehicle?.softwareUpdates || '—'"
         class="dash-card"
-      >{{ selectedVehicle?.connected }}</app-card>
+      >{{ selectedVehicle?.softwareUpdates }}</app-card>
           </div>
 
     <div class="text-center mt-4" *ngIf="selectedVehicle">
