@@ -1,23 +1,51 @@
-<main>
-  <section class="main-section">
-    <img class="overlay" src="img/Mustang-red.png" />
+<!-- <main class="d-flex flex-row justify-content-center align-items-center" >
+  <section class="bg-primary text-white p-3  flex-grow-0.8 min-vh-100 w-100" >
+    <div class="w-80" >
+
+      <img class="" src="img/Mustang-red.png" />
+    </div>
+  </section>
+  
+  <section class="bg-secondary text-white p-3 flex-grow-0.35 min-vh-100 w-100" >
+    <div class="d-flex flex-column" >
+      <img src="img/ford.png" class="w-25" />
+    </div>
+    
+  </section>
+</main> -->
+  
+
+
+
+
+
+
+
+
+
+<main class="d-flex flex-row justify-content-center align-items-center vh-100">
+  <!-- Seção da imagem -->
+  <section class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+    <img src="img/Mustang-red.png" class="w-75 opacity-50" />
   </section>
 
-  <section class="form-section">
-    <div class="overlay-wrapper">
-      <img src="img/ford.png" />
-      <div class="container mt-5">
+  <!-- Seção do formulário -->
+  <section class="d-flex flex-column align-items-center justify-content-center px-4 flex-grow-1" style="max-width: 40%; min-width: 360px;">
+    <div class="border rounded-3 shadow p-4 w-100" style="height: 60vh;">
+      <div class="container mt-5 text-center">
+        <img src="img/ford.png" class="w-25 mb-5" />
         <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card p-4 shadow">
-              <h3 class="text-center mb-4">Boas-vindas</h3>
+          <div class="col-md-12">
+            <div class="card p-4 shadow mw-70">
+              <h3 class="text-center mb-4 text-primary">Boas-vindas</h3>
+
               <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
-                  <label for="nome" class="form-label">Usuário</label>
                   <input
                     type="text"
                     id="nome"
                     class="form-control"
+                    placeholder="Insira seu e-mail"
                     formControlName="nome"
                     [ngClass]="{
                       'is-invalid':
@@ -33,11 +61,11 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="senha" class="form-label">Senha</label>
                   <input
                     type="password"
                     id="senha"
                     class="form-control"
+                    placeholder="Insira sua senha"
                     formControlName="senha"
                     [ngClass]="{
                       'is-invalid':
@@ -54,15 +82,15 @@
 
                 <div class="d-flex flex-column gap-3">
                   <div class="d-flex justify-content-end">
-                    <div class="form-switch form-check">
+                    <div class="form-check form-switch">
                       <input
                         class="form-check-input"
                         type="checkbox"
                         id="meuSwitch"
                       />
-                      <label class="form-check-label" for="meuSwitch"
-                        >Logar automaticamente</label
-                      >
+                      <label class="form-check-label" for="meuSwitch">
+                        Logar automaticamente
+                      </label>
                     </div>
                   </div>
 
@@ -83,6 +111,14 @@
   </section>
 </main>
 
+
+
+
+
+
+
+
+
 <!-- <main>
   <section class="main-section">
     <img class="overlay" src="img/Mustang-red.png" />
@@ -97,19 +133,3 @@
     </div>
   </section>
 </main> -->
-
-<!-- <div class="login-container">
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label for="username">Usuário</label>
-      <input id="username" formControlName="username" type="text" />
-      
-      <label for="password">Senha</label>
-      <input id="password" formControlName="password" type="password" />
-      
-      <button type="submit">Entrar</button>
-      
-      <p *ngIf="loginError" class="error">{{ loginError }}</p>
-    </form>
-  </div>
-   -->
