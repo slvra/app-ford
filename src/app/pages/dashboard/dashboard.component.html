@@ -50,8 +50,8 @@
       >{{ selectedVehicle?.connected }}</app-card>
           </div>
 
-    <div class="car-img">
-      <img src="" />
+    <div class="text-center mt-4" *ngIf="selectedVehicle">
+      <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle" class="img-fluid" style="max-height: 300px;" />
     </div>
 
     <div class="table">
