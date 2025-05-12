@@ -1,7 +1,6 @@
-<div class="d-flex justify-content-between flex-wrap">
-  <!-- Card 1: Veículo com dropdown -->
+<!-- <div class="d-flex justify-content-between flex-wrap">
   <app-card title="Veículo">
-    <select class="form-select" (change)="onSelectVehicle($event.target.value)">
+    <select class="form-select" (change)="onSelectVehicle($event)">
       <option value="">Selecione um veículo</option>
       <option *ngFor="let v of vehicles" [value]="v.id">
         {{ v.vehicle }}
@@ -24,4 +23,4 @@
 
 <div class="text-center mt-4" *ngIf="selectedVehicle">
   <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle" class="img-fluid" style="max-height: 300px;" />
-</div>
+</div> -->

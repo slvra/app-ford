@@ -20,23 +20,27 @@ interface Vehicle {
   templateUrl: './teste.component.html',
   styleUrls: ['./teste.component.css']
 })
-export class TesteComponent implements OnInit {
-  vehicles: Vehicle[] = [];
-  selectedVehicle: Vehicle | null = null;
+export class TesteComponent   { //export class TesteComponent implements OnInit {
 
-  constructor(private http: HttpClient) {}
+  // vehicles: Vehicle[] = [];
+  // selectedVehicle: Vehicle | null = null;
 
-  ngOnInit(): void {
-    this.http.get<{ vehicles: Vehicle[] }>('http://localhost:3001/vehicles')
-      .subscribe(response => {
-        this.vehicles = response.vehicles;
-      });
-  }
+  // constructor(private http: HttpClient) {}
 
-  onSelectVehicle(id: string) {
-    const selected = this.vehicles.find(v => v.id === +id);
-    this.selectedVehicle = selected ?? null;
-  }
+  // ngOnInit(): void {
+  //   this.http.get<{ vehicles: Vehicle[] }>('http://localhost:3001/vehicles')
+  //     .subscribe(response => {
+  //       this.vehicles = response.vehicles;
+  //     });
+  // }
+
+  // onSelectVehicle(event: Event) {
+  //   event.target?.addEventListener('xd',(data: string) => {
+  //     console.log('Selected vehicle:', data);
+  //   })
+  //   const selected = this.vehicles.find(v => v.id === +id);
+  //   this.selectedVehicle = selected ?? null;
+  // }
 }
 
 
