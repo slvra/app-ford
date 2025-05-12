@@ -1,7 +1,7 @@
-export interface VehicleData {
-    odometro: number;
-    nivelCombustivel: number;
-    status: string;
-    latitude: number;
-    longitude: number;
-}
+// export interface VehicleData {
+//     odometer: number;
+//     fuelLevel: number;
+//     status: string;
+//     latitude: number;
+//     longitude: number;
+// }

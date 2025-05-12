@@ -1,14 +1,92 @@
 <main>
   <section class="main-section">
     <img class="overlay" src="img/Mustang-red.png" />
-    <app-sidebar
-      [logo]="'img/ford.png'"
-      [links]="[
-        { label: 'Login', route: '/login' },
-        { label: 'Home', route: '/home' },
-        { label: 'Dashboard', route: '/dashboard' }
-      ]"
-    ></app-sidebar>
+  </section>
+
+  <section class="form-section">
+    <div class="overlay-wrapper">
+      <img src="img/ford.png" />
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card p-4 shadow">
+              <h3 class="text-center mb-4">Boas-vindas</h3>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Usuário</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    class="form-control"
+                    formControlName="nome"
+                    [ngClass]="{
+                      'is-invalid':
+                        submitted && loginForm.controls['nome'].invalid
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && loginForm.controls['nome'].invalid"
+                    class="invalid-feedback"
+                  >
+                    Nome é obrigatório
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="senha" class="form-label">Senha</label>
+                  <input
+                    type="password"
+                    id="senha"
+                    class="form-control"
+                    formControlName="senha"
+                    [ngClass]="{
+                      'is-invalid':
+                        submitted && loginForm.controls['senha'].invalid
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && loginForm.controls['senha'].invalid"
+                    class="invalid-feedback"
+                  >
+                    Senha é obrigatória
+                  </div>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex justify-content-end">
+                    <div class="form-switch form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="meuSwitch"
+                      />
+                      <label class="form-check-label" for="meuSwitch"
+                        >Logar automaticamente</label
+                      >
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary w-100" type="submit">
+                    Entrar
+                  </button>
+                </div>
+              </form>
+
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- <main>
+  <section class="main-section">
+    <img class="overlay" src="img/Mustang-red.png" />
+    
   </section>
 
   <section class="form-section">
@@ -18,9 +96,7 @@
       <app-input></app-input>
     </div>
   </section>
-</main>
-
-
+</main> -->
 
 <!-- <div class="login-container">
     <h2>Login</h2>

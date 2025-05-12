@@ -5,7 +5,8 @@
       [links]="[
         { label: 'Login', route: '/login' },
         { label: 'Home', route: '/home' },
-        { label: 'Dashboard', route: '/dashboard' }
+        { label: 'Dashboard', route: '/dashboard' },
+        { label: 'Teste', route: '/teste' }
       ]"
     ></app-sidebar>
   
@@ -20,28 +21,28 @@
         [content]="selectedVehicle?.vehicle || 'Selecione um modelo'"
         class="dash-card"
             >
-      <select [formControl]="selectedIdControl" style="width: 100%;">
-        <option *ngFor="let car of vehicles" [value]="car.id">{{car.vehicle}}</option>
+      <select [formControl]="selectedIdControl" class="form-select " style="width: 100%;">
+        <option *ngFor="let v of vehicles" [value]="v.id">{{v.modelo}}</option>
       </select>
       </app-card>
         
       <app-card
         title="Total de Vendas"
-        [content]="selectedVehicle?.volumetotal || '—'"
+        [content]="selectedVehicle?.ano || '—'"
         class="dash-card"
-      ></app-card>
+      >{{ selectedVehicle?.connected }}</app-card>
         
       <app-card
         title="Conectados"
-        [content]="selectedVehicle?.connected || '—'"
+        [content]="selectedVehicle?.conectado || '—'"
         class="dash-card"
-      ></app-card>
+      >{{ selectedVehicle?.connected }}</app-card>
         
       <app-card
         title="Update Software"
         [content]="selectedVehicle?.softwareUpdates || '—'"
         class="dash-card"
-      ></app-card>
+      >{{ selectedVehicle?.connected }}</app-card>
           </div>
 
     <div class="car-img">

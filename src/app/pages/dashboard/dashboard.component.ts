@@ -4,11 +4,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from '../../components/card/card.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { TableComponent } from '../../components/table/table.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CardComponent, ReactiveFormsModule, SidebarComponent, TableComponent],
+  imports: [CardComponent, ReactiveFormsModule, SidebarComponent, TableComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -22,9 +23,10 @@ export class DashboardComponent implements OnInit {
 
   constructor(private vehicleService: VehicleService) {}
 
+
   ngOnInit(): void {
-    this.vehicleService.getVehicles().subscribe(data => {
-      this.vehicles = data.vehicles;
+    this.vehicleService.getVehicles().subscribe((data: any) => {
+      this.vehicles = Array.isArray(data) ? data : data.vehicles;
     });
 
     this.vehicleList.get('selectedId')?.valueChanges.subscribe(id => {
@@ -35,32 +37,5 @@ export class DashboardComponent implements OnInit {
     get selectedIdControl(): FormControl {
     return this.vehicleList.get('selectedId') as FormControl;
   }
+  
 }
-
-
-// import { Component } from '@angular/core';
-// import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-// import { CardComponent } from '../../components/card/card.component';
-// import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-// import { TableComponent } from '../../components/table/table.component';
-
-
-
-// @Component({
-//   selector: 'app-dashboard',
-//   imports: [SidebarComponent, CardComponent, ReactiveFormsModule, TableComponent],
-//   standalone: true,
-//   templateUrl: './dashboard.component.html',
-//   styleUrls: ['./dashboard.component.css']
-// })
-// export class DashboardComponent {
-
-
-//   vehicleList = new FormGroup({
-//     totalVendas    : new FormControl(''),
-//     conectados     : new FormControl(null),
-//     updateSoftware : new FormControl(''),
-//   });
-
-
-// }
