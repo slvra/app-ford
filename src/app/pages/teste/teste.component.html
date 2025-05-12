@@ -1,26 +1,38 @@
-<!-- <div class="d-flex justify-content-between flex-wrap">
-  <app-card title="Veículo">
-    <select class="form-select" (change)="onSelectVehicle($event)">
-      <option value="">Selecione um veículo</option>
-      <option *ngFor="let v of vehicles" [value]="v.id">
-        {{ v.vehicle }}
-      </option>
-    </select>
-  </app-card>
 
-  <app-card title="Total de Vendas">
-    {{ selectedVehicle?.volumetotal ?? '' }}
-  </app-card>
+<app-card
+        title="Veículo"
+        class="dash-card"
+>
+<select name="" id="" [(ngModel)]="xvar" (change)="onSelectVehicle()">
+  <option value="0" disabled selected>Selecione um modelo</option>
+  <option value="0">Ranger</option>
+  <option value="1">Mustang</option>
+  <option value="2">Territory</option>
+  <option value="3">Bronco Sport</option>
+</select>
+</app-card>
 
-  <app-card title="Conectados">
-    {{ selectedVehicle?.connected ?? '' }}
-  </app-card>
 
-  <app-card title="Update Software">
-    {{ selectedVehicle?.softwareUpdates ?? '' }}
-  </app-card>
-</div>
+<!-- <div *ngIf="carros">
+  
+  a <p>{{ carros[yvar].volumetotal }}</p>
+</div > -->
 
-<div class="text-center mt-4" *ngIf="selectedVehicle">
-  <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle" class="img-fluid" style="max-height: 300px;" />
-</div> -->
+<app-card
+        title="Total de Vendas"
+        class="dash-card"
+      >{{ carros[yvar].volumetotal }}</app-card>
+
+      <app-card
+        title="Conectados"
+        class="dash-card"
+      >{{ carros[yvar].connected }}</app-card>
+        
+      <app-card
+        title="Update Software"
+        class="dash-card"
+      >{{ carros[yvar].softwareUpdates }}</app-card>
+
+      <div class="car-img">
+        <img src="" />
+      </div>

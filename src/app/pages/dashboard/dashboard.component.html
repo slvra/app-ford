@@ -1,62 +1,42 @@
 <main>
   <section>
-    <app-sidebar
-      [logo]="'img/ford.png'"
-      [links]="[
+    <app-sidebar [logo]="'img/ford.png'" [links]="[
         { label: 'Login', route: '/login' },
         { label: 'Home', route: '/home' },
         { label: 'Dashboard', route: '/dashboard' },
-        { label: 'Teste', route: '/teste' }
-      ]"
-    ></app-sidebar>
-  
+        { label: 'Teste', route: '/teste'}
+      ]"></app-sidebar>
+
     <div class="title">
       <h1>Dashboard FORD</h1>
     </div>
   </section>
-  
-    <div class="card-container w-100" >
-      <app-card
-        title="Veículo"
-        [content]="selectedVehicle?.vehicle || 'Selecione um modelo'"
-        class="dash-card"
-            >
-            <form [formGroup]="vehicleList">
-              <select id="" formControlName="selectedId">
-              <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">  
-                {{ vehicle.vehicle }}
-              </option>
-              </select>
-            </form>
-            
-      </app-card>
-        
-      <app-card
-        title="Total de Vendas"
-        [content]="selectedVehicle?.volumetotal || '—'"
-        class="dash-card"
-      >{{ selectedVehicle?.volumetotal }}</app-card>
-        
-      <app-card
-        title="Conectados"
-        [content]="selectedVehicle?.conectado || '—'"
-        class="dash-card"
-      >{{ selectedVehicle?.connected }}</app-card>
-        
-      <app-card
-        title="Update Software"
-        [content]="selectedVehicle?.softwareUpdates || '—'"
-        class="dash-card"
-      >{{ selectedVehicle?.softwareUpdates }}</app-card>
-          </div>
 
-    <div class="text-center mt-4" *ngIf="selectedVehicle">
-      <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle" class="img-fluid" style="max-height: 300px;" />
-    </div>
+  <div class="card-container ">
+    <app-card title="Veículo" class="dash-card dropdown">
+      <form [formGroup]="vehicleList">
+        <select id="" formControlName="selectedId">
+          <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{ vehicle.vehicle }}</option>
+        </select>
+      </form>
+    </app-card>
 
-    <div class="table">
-      <app-table></app-table>
-    </div>
+    <app-card title="Total de Vendas" [content]="selectedVehicle?.volumetotal || '—'"
+      class="dash-card">{{selectedVehicle?.volumetotal}} Und.</app-card>
 
-  </main>
-  
+    <app-card title="Conectados" [content]="selectedVehicle?.connected || '—'"
+      class="dash-card">{{selectedVehicle?.connected}} Und.</app-card>
+
+    <app-card title="Update Software" [content]="selectedVehicle?.softwareUpdates || '—'"
+      class="dash-card">{{selectedVehicle?.softwareUpdates}} Und.</app-card>
+  </div>
+
+  <div class="car-img">
+    <img [src]="selectedVehicle?.img" />
+  </div>
+
+  <div class="table">
+    <app-table></app-table>
+  </div>
+
+</main>

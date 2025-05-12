@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CardComponent } from '../../components/card/card.component';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { VehicleService } from '../../services/vehicle.service';
+import { CardComponent } from "../../components/card/card.component";
 
 interface Vehicle {
   id: number;
@@ -16,31 +16,39 @@ interface Vehicle {
 
 @Component({
   selector: 'app-teste',
-  imports: [CardComponent, CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, CardComponent],
   templateUrl: './teste.component.html',
   styleUrls: ['./teste.component.css']
 })
-export class TesteComponent   { //export class TesteComponent implements OnInit {
+export class TesteComponent implements OnInit {
+  carros: Vehicle[] = [];
+  selectedVehicle: Vehicle | null = null;
+  xvar: number = 0
+  yvar = 0
 
-  // vehicles: Vehicle[] = [];
-  // selectedVehicle: Vehicle | null = null;
+  servico = inject (VehicleService)
+  constructor(private http: HttpClient) {}
 
-  // constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    this.http.get<{ vehicles: Vehicle[] }>('http://localhost:3001/vehicles')
+      .subscribe(response => {
+        this.carros = response.vehicles;
+      });
+  }
 
-  // ngOnInit(): void {
-  //   this.http.get<{ vehicles: Vehicle[] }>('http://localhost:3001/vehicles')
-  //     .subscribe(response => {
-  //       this.vehicles = response.vehicles;
-  //     });
-  // }
+  onSelectVehicle() {  
+    this.servico.getVehicles().subscribe ({
+      next:(response: any) => { 
 
-  // onSelectVehicle(event: Event) {
-  //   event.target?.addEventListener('xd',(data: string) => {
-  //     console.log('Selected vehicle:', data);
-  //   })
-  //   const selected = this.vehicles.find(v => v.id === +id);
-  //   this.selectedVehicle = selected ?? null;
-  // }
+        console.log(response)
+        
+        this.carros= response.vehicles
+        this.yvar = this.xvar
+      }
+    })
+  }
+
+
 }
 
 

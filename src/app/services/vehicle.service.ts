@@ -7,7 +7,7 @@ import { Veiculo } from '../Models/veiculo.model';
   providedIn: 'root',
 })
 export class VehicleService {
-  private api = 'http://localhost:3000/vehicles';
+  private api = 'http://localhost:3001/vehicles';
   constructor(private http: HttpClient) {}
   getVehicles(): Observable<Veiculo[]> {
     return this.http.get<Veiculo[]>(this.api);
