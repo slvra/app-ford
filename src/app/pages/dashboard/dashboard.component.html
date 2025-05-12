@@ -21,9 +21,14 @@
         [content]="selectedVehicle?.vehicle || 'Selecione um modelo'"
         class="dash-card"
             >
-      <select [formControl]="selectedIdControl" class="form-select " style="width: 100%;">
-        <option *ngFor="let v of vehicles" [value]="v.id">{{v.modelo}}</option>
-      </select>
+            <form [formGroup]="vehicleList">
+              <select id="" formControlName="selectedId">
+              <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">  
+                {{ vehicle.vehicle }}
+              </option>
+              </select>
+            </form>
+            
       </app-card>
         
       <app-card
