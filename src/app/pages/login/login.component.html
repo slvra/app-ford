@@ -24,19 +24,18 @@
 
 
 <main class="d-flex flex-row justify-content-center align-items-center vh-100">
-  <!-- Seção da imagem -->
+
   <section class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
     <img src="img/ranger.png" class="w-75 opacity-50" />
   </section>
 
-  <!-- Seção do formulário -->
-  <section class="d-flex flex-column align-items-center justify-content-center px-4 flex-grow-1" style="max-width: 40%; min-width: 360px;">
-    <div class="border rounded-3 shadow p-4 w-100" style="height: 100vh;">
+  <section class="d-flex flex-column align-items-center justify-content-center flex-grow-1" style="max-width: 40%; min-width: 360px;">
+    <div class="border rounded-3 shadow px-5  w-100" style="height: 100vh;">
       <div class="container mt-5 mb-1 text-center">
-        <img src="img/ford.png" class="w-25 mb-5" />
+        <img src="img/ford.png" class="w-25 my-5 " />
         <div class="row justify-content-center">
           <div class="col-md-12">
-            <div class="card p-4 shadow mw-70">
+            <div class="card p-4 shadow mw-70 mt-5">
               <h3 class="text-center mb-4 text-primary">Boas-vindas</h3>
 
               <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">

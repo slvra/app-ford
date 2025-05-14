@@ -1,15 +1,20 @@
 <div class="container mt-4">
+  
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    {{ errorMessage }}
+  </div>
+  
   <table
     class="table table-bordered table-striped mt-3 text-center align-middle"
   >
-    <thead class="table-light bg-dark text-white">
+    <thead class="table-light">
       <tr>
-        <th class="align-middle">Código VIN</th>
-        <th class="align-middle">Odômetro</th>
-        <th class="align-middle">Nível de Combustível (%)</th>
-        <th class="align-middle">Status</th>
-        <th class="align-middle">Lat.</th>
-        <th class="align-middle">Long.</th>
+        <th class="align-middle bg-dark text-white">Código VIN</th>
+        <th class="align-middle bg-dark text-white">Odômetro</th>
+        <th class="align-middle bg-dark text-white">Nível de Combustível (%)</th>
+        <th class="align-middle bg-dark text-white">Status</th>
+        <th class="align-middle bg-dark text-white">Lat.</th>
+        <th class="align-middle bg-dark text-white">Long.</th>
       </tr>
     </thead>
     <tbody>
@@ -23,9 +28,6 @@
             (ngModelChange)="onVinInputChange()"
             placeholder="Digite o código VIN"
           />
-            <div *ngIf="errorMessage" class="alert alert-danger">
-              {{ errorMessage }}
-            </div>
         </td>
         <td class="align-middle">{{ vehicleData?.odometro ?? "-" }}</td>
         <td class="align-middle">{{ vehicleData?.nivelCombustivel ?? "-" }}</td>
@@ -33,6 +35,7 @@
         <td class="align-middle">{{ vehicleData?.lat ?? "-" }}</td>
         <td class="align-middle">{{ vehicleData?.long ?? "-" }}</td>
       </tr>
+      
     </tbody>
   </table>
 </div>

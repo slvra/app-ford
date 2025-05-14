@@ -16,20 +16,20 @@
   <div class="card-container ">
     <app-card title="Veículo" class="dash-card dropdown">
       <form [formGroup]="vehicleList">
-        <select id="" formControlName="selectedId" class="align-middle">
+        <select id="" formControlName="selectedId" class="align-middle form-select">
           <option class="align-middle" *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{ vehicle.vehicle }}</option>
         </select>
       </form>
     </app-card>
 
     <app-card title="Total de Vendas"
-      class="dash-card align-middle">{{selectedVehicle?.volumetotal}} Und.</app-card>
+      class="dash-card align-middle text-center">{{selectedVehicle?.volumetotal}} Und.</app-card>
 
     <app-card title="Conectados" 
-      class="dash-card align-middle">{{selectedVehicle?.connected}} Und.</app-card>
+      class="dash-card align-middle text-center">{{selectedVehicle?.connected}} Und.</app-card>
 
     <app-card title="Update Software" 
-      class="dash-card align-middle">{{selectedVehicle?.softwareUpdates}} Und.</app-card>
+      class="dash-card align-middle text-center">{{selectedVehicle?.softwareUpdates}} Und.</app-card>
   </div>
 
   <div class="car-img">
