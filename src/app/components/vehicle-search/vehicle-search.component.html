@@ -1,0 +1,39 @@
+<div class="container mt-4">
+
+ 
+
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="table-light">
+      <tr>
+        <th>Código VIN</th>
+        <th>Odômetro</th>
+        <th>Nível de Combustível (%)</th>
+        <th>Status</th>
+        <th>Localização (Lat, Long)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            maxlength="20"
+            [(ngModel)]="vinCode"
+            (ngModelChange)="onVinInputChange()"
+            placeholder="Digite o código VIN"
+          />
+           <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+        </td>
+        <td>{{ vehicleData?.odometro ?? '-' }}</td>
+        <td>{{ vehicleData?.nivelCombustivel ?? '-' }}</td>
+        <td>{{ vehicleData?.status ?? '-' }}</td>
+        <td>
+          {{ vehicleData?.lat ?? '-' }}, {{ vehicleData?.long ?? '-' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
