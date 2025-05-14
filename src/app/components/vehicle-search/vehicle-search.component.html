@@ -1,38 +1,37 @@
 <div class="container mt-4">
-
- 
-
-  <table class="table table-bordered table-striped mt-3">
-    <thead class="table-light">
+  <table
+    class="table table-bordered table-striped mt-3 text-center align-middle"
+  >
+    <thead class="table-light bg-dark text-white">
       <tr>
-        <th>Código VIN</th>
-        <th>Odômetro</th>
-        <th>Nível de Combustível (%)</th>
-        <th>Status</th>
-        <th>Localização (Lat, Long)</th>
+        <th class="align-middle">Código VIN</th>
+        <th class="align-middle">Odômetro</th>
+        <th class="align-middle">Nível de Combustível (%)</th>
+        <th class="align-middle">Status</th>
+        <th class="align-middle">Lat.</th>
+        <th class="align-middle">Long.</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td class="align-middle">
           <input
             type="text"
-            class="form-control"
+            class="form-control text-center"
             maxlength="20"
             [(ngModel)]="vinCode"
             (ngModelChange)="onVinInputChange()"
             placeholder="Digite o código VIN"
           />
-           <div *ngIf="errorMessage" class="alert alert-danger">
-    {{ errorMessage }}
-  </div>
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{ errorMessage }}
+            </div>
         </td>
-        <td>{{ vehicleData?.odometro ?? '-' }}</td>
-        <td>{{ vehicleData?.nivelCombustivel ?? '-' }}</td>
-        <td>{{ vehicleData?.status ?? '-' }}</td>
-        <td>
-          {{ vehicleData?.lat ?? '-' }}, {{ vehicleData?.long ?? '-' }}
-        </td>
+        <td class="align-middle">{{ vehicleData?.odometro ?? "-" }}</td>
+        <td class="align-middle">{{ vehicleData?.nivelCombustivel ?? "-" }}</td>
+        <td class="align-middle">{{ vehicleData?.status ?? "-" }}</td>
+        <td class="align-middle">{{ vehicleData?.lat ?? "-" }}</td>
+        <td class="align-middle">{{ vehicleData?.long ?? "-" }}</td>
       </tr>
     </tbody>
   </table>

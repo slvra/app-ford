@@ -3,7 +3,6 @@ import { VehicleService } from '../../services/vehicle.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from '../../components/card/card.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { TableComponent } from '../../components/table/table.component';
 import { CommonModule } from '@angular/common';
 import { LogoutBtnComponent } from '../../components/logout-btn/logout-btn.component';
 import { VehicleSearchComponent } from '../../components/vehicle-search/vehicle-search.component';

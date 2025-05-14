@@ -19,12 +19,13 @@
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: #04095c;
+    background-color: #ffffff;
     color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.5);
     transition: left 0.3s ease;
     z-index: 1002;
+    text-decoration: none;
   }
   
   .sidebar.active {

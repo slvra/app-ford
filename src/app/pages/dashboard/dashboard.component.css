@@ -11,8 +11,8 @@
   display: flex;
   justify-content: space-evenly;
   gap: 10px; 
- 
 
+  
   .dash-card {
     width: 250px;
     height: 110px;
@@ -27,12 +27,11 @@ img {
   width: auto;
   height: 60%;
   margin: 0 auto;
-  
 }
+
 .car-img{
-  height: 30rem;
+  height: 26rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
